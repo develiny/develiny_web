@@ -5,6 +5,8 @@ import 'package:scroll_page_view/pager/page_controller.dart';
 import 'package:scroll_page_view/pager/scroll_page_view.dart';
 import 'package:scroll_page_view/scroll_page.dart';
 
+import 'package:url_launcher/url_launcher.dart';
+
 class ViewPager extends StatefulWidget {
   const ViewPager({Key? key}) : super(key: key);
 
@@ -110,7 +112,10 @@ class MyCustomScrollView extends StatelessWidget {
                 // children: _images.map((image) => _imageView(image)).toList(),
                 children: [
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      _launchURL(
+                          'https://play.google.com/store/apps/details?id=com.tistory.starcue.bgnoise');
+                    },
                     child: Image.asset(
                       'images/aaa.png',
                       // width: (!isMobile(context) ? size.width * 0.45 : size.width * 0.9),
@@ -134,6 +139,10 @@ class MyCustomScrollView extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void _launchURL(String _url) async {
+    await canLaunch(_url) ? await launch(_url) : throw 'Could not launch $_url';
   }
 }
 

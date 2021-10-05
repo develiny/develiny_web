@@ -37,6 +37,8 @@ class ContactUsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController tecEmail = TextEditingController();
+    TextEditingController tecContents = TextEditingController();
     Size size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20.0),
@@ -68,6 +70,7 @@ class ContactUsScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 20.0),
                 TextField(
+                  controller: tecEmail,
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
@@ -78,6 +81,7 @@ class ContactUsScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 20.0),
                 TextField(
+                  controller: tecContents,
                   keyboardType: TextInputType.text,
                   minLines: 15,
                   maxLines: 100,
@@ -90,7 +94,9 @@ class ContactUsScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 20.0),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
