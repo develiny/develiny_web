@@ -87,7 +87,7 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   if (isMobile(context))
                     Image.asset(
-                      'images/develinyicon.png',
+                      'images/develinymainicon.png',
                       height: size.height * 0.3,
                       fit: BoxFit.fill,
                     ),
@@ -100,7 +100,7 @@ class HomeScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right: 40.0),
               child: Image.asset(
-                'images/develinyicon.png',
+                'images/develinymainicon.png',
                 height: size.height * 0.5,
                 fit: BoxFit.fill,
               ),
