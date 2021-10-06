@@ -130,7 +130,8 @@ class MainText extends StatelessWidget {
                 text: 'Welcome to ',
                 style: TextStyle(
                     fontSize: isDesktop(context) ? 64 : 32,
-                    fontWeight: FontWeight.w800)),
+                    fontWeight: FontWeight.w800,
+                    color: Colors.black)),
             TextSpan(
                 text: 'Develiny',
                 style: TextStyle(
@@ -145,27 +146,27 @@ class MainText extends StatelessWidget {
                 text: 'Take a',
                 style: TextStyle(
                     fontSize: isDesktop(context) ? 64 : 32,
-                    fontWeight: FontWeight.w800)),
+                    fontWeight: FontWeight.w800, color: Colors.black)),
             TextSpan(
                 text: ' look',
                 style: TextStyle(
                     fontSize: isDesktop(context) ? 64 : 32,
-                    fontWeight: FontWeight.w800)),
+                    fontWeight: FontWeight.w800, color: Colors.black)),
             TextSpan(
                 text: ' at ',
                 style: TextStyle(
                     fontSize: isDesktop(context) ? 64 : 32,
-                    fontWeight: FontWeight.w800)),
+                    fontWeight: FontWeight.w800, color: Colors.black)),
             TextSpan(
                 text: 'our ',
                 style: TextStyle(
                     fontSize: isDesktop(context) ? 64 : 32,
-                    fontWeight: FontWeight.w800)),
+                    fontWeight: FontWeight.w800, color: Colors.black)),
             TextSpan(
                 text: 'product',
                 style: TextStyle(
                     fontSize: isDesktop(context) ? 64 : 32,
-                    fontWeight: FontWeight.w800))
+                    fontWeight: FontWeight.w800, color: Colors.black))
           ]),
         ),
         SizedBox(
@@ -176,21 +177,23 @@ class MainText extends StatelessWidget {
             TextSpan(
                 text: 'Advertising and business ',
                 style: TextStyle(
-                    fontSize: isDesktop(context)
-                        ? 32
-                        : isTab(context)
-                            ? 20
-                            : 20,
-                    fontWeight: FontWeight.w500,)),
+                  fontSize: isDesktop(context)
+                      ? 32
+                      : isTab(context)
+                          ? 20
+                          : 20,
+                  fontWeight: FontWeight.w500, color: Colors.black
+                )),
             TextSpan(
                 text: 'inquiries are always welcome.',
                 style: TextStyle(
-                    fontSize: isDesktop(context)
-                        ? 32
-                        : isTab(context)
-                            ? 20
-                            : 20,
-                    fontWeight: FontWeight.w500,))
+                  fontSize: isDesktop(context)
+                      ? 32
+                      : isTab(context)
+                          ? 20
+                          : 20,
+                  fontWeight: FontWeight.w500, color: Colors.black
+                ))
           ]),
         )
       ],
