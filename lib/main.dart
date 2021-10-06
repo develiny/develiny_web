@@ -17,9 +17,9 @@ class MyDevWeb extends StatelessWidget {
       title: 'develiny',
       theme: ThemeData(primaryColor: Colors.indigo),
       // home: HomePage(),
-      initialRoute: "/",
+      initialRoute: "/home",
       routes: {
-        "/": (context) => HomePage(),
+        "/home": (context) => HomePage(),
         "/about_us": (context) => AboutUs(),
         "/product": (context) => Product(),
         "/contect_us": (context) => ContactUs()

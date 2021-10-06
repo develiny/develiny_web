@@ -15,19 +15,27 @@ class NavItem extends StatelessWidget {
             children: [
               SizedBox(height: 20.0),
               NavItems(title: 'Home', tapEvent: () {
-                Navigator.pushNamed(context, '/');
+                if (ModalRoute.of(context)!.settings.name != '/home') {
+                  Navigator.pushNamed(context, '/home');
+                }
               }),
               SizedBox(height: 20.0),
               NavItems(title: 'About Us', tapEvent: () {
-                Navigator.pushNamed(context, '/about_us');
+                if (ModalRoute.of(context)!.settings.name != '/about_us') {
+                  Navigator.pushNamed(context, '/about_us');
+                }
               }),
               SizedBox(height: 20.0),
               NavItems(title: 'Product', tapEvent: () {
-                Navigator.pushNamed(context, '/product');
+                if (ModalRoute.of(context)!.settings.name != '/product') {
+                  Navigator.pushNamed(context, '/product');
+                }
               }),
               SizedBox(height: 20.0),
               NavItems(title: 'Contect Us', tapEvent: () {
-                Navigator.pushNamed(context, '/contect_us');
+                if (ModalRoute.of(context)!.settings.name != '/contect_us') {
+                  Navigator.pushNamed(context, '/contect_us');
+                }
               })
             ],
           ),

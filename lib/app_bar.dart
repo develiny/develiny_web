@@ -34,7 +34,9 @@ class DesktopAppBar extends StatelessWidget {
           children: [
             TextButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/');
+                if (ModalRoute.of(context)!.settings.name != '/home') {
+                  Navigator.pushNamed(context, '/home');
+                }
               },
               child: Row(
                 children: [
@@ -58,7 +60,9 @@ class DesktopAppBar extends StatelessWidget {
               children: [
                 TextButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/');
+                    if (ModalRoute.of(context)!.settings.name != '/home') {
+                      Navigator.pushNamed(context, '/home');
+                    }
                   },
                   child: Text(
                     'Home',
@@ -69,7 +73,9 @@ class DesktopAppBar extends StatelessWidget {
                 ),
                 TextButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/about_us');
+                    if (ModalRoute.of(context)!.settings.name != '/about_us') {
+                      Navigator.pushNamed(context, '/about_us');
+                    }
                   },
                   child: Text(
                     'About Us',
@@ -80,7 +86,9 @@ class DesktopAppBar extends StatelessWidget {
                 ),
                 TextButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/product');
+                    if (ModalRoute.of(context)!.settings.name != '/product') {
+                      Navigator.pushNamed(context, '/product');
+                    }
                   },
                   child: Text(
                     'Product',
@@ -91,7 +99,9 @@ class DesktopAppBar extends StatelessWidget {
                 ),
                 TextButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/contect_us');
+                    if (ModalRoute.of(context)!.settings.name != '/contect_us') {
+                      Navigator.pushNamed(context, '/contect_us');
+                    }
                   },
                   child: Text(
                     'Contect Us',
