@@ -20,9 +20,9 @@ class NavItem extends StatelessWidget {
                 }
               }),
               SizedBox(height: 20.0),
-              NavItems(title: 'About Us', tapEvent: () {
-                if (ModalRoute.of(context)!.settings.name != '/about_us') {
-                  Navigator.pushNamed(context, '/about_us');
+              NavItems(title: 'About', tapEvent: () {
+                if (ModalRoute.of(context)!.settings.name != '/about') {
+                  Navigator.pushNamed(context, '/about');
                 }
               }),
               SizedBox(height: 20.0),
@@ -32,9 +32,9 @@ class NavItem extends StatelessWidget {
                 }
               }),
               SizedBox(height: 20.0),
-              NavItems(title: 'Contect Us', tapEvent: () {
-                if (ModalRoute.of(context)!.settings.name != '/contect_us') {
-                  Navigator.pushNamed(context, '/contect_us');
+              NavItems(title: 'Contect', tapEvent: () {
+                if (ModalRoute.of(context)!.settings.name != '/contect') {
+                  Navigator.pushNamed(context, '/contect');
                 }
               })
             ],

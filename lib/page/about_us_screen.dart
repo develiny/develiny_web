@@ -111,9 +111,26 @@ class DesktopAbountUsScreen extends StatelessWidget {
                 child: Container(
                   padding: EdgeInsets.all(30.0),
                   child: Column(
+                    // mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Develiny develops services for the development of customers lives as a single developer.',
+                        "Develiny is a freelancer who lives in Korea.",
+                        textAlign: TextAlign.start,
+                        style: TextStyle(
+                            fontSize: 18.0, fontWeight: FontWeight.w600),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        "I'm developing a one-man developer app or web service. My area of expertise is developing hybrid web apps and Android native apps.",
+                        textAlign: TextAlign.start,
+                        style: TextStyle(
+                            fontSize: 18.0, fontWeight: FontWeight.w600),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        "Let's make something special.",
+                        textAlign: TextAlign.start,
                         style: TextStyle(
                             fontSize: 18.0, fontWeight: FontWeight.w600),
                       ),
@@ -167,7 +184,18 @@ class MobileAboutUsScreen extends StatelessWidget {
                       color: Color.fromRGBO(5, 5, 100, 1.0))),
               SizedBox(height: 20),
               Text(
-                'Develiny develops services for the development of customers lives as a single developer.',
+                "Develiny is a freelancer who lives in Korea.",
+                style: TextStyle(
+                    fontSize: 18.0, fontWeight: FontWeight.w400), textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 10),
+              Text(
+                "I'm developing a one-man developer app or web service. My area of expertise is developing hybrid web apps and Android native apps.",
+                style: TextStyle(
+                    fontSize: 18.0, fontWeight: FontWeight.w400), textAlign: TextAlign.center,
+              ),SizedBox(height: 10),
+              Text(
+                "Let's make something special.",
                 style: TextStyle(
                     fontSize: 18.0, fontWeight: FontWeight.w400), textAlign: TextAlign.center,
               ),

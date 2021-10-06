@@ -73,12 +73,12 @@ class DesktopAppBar extends StatelessWidget {
                 ),
                 TextButton(
                   onPressed: () {
-                    if (ModalRoute.of(context)!.settings.name != '/about_us') {
-                      Navigator.pushNamed(context, '/about_us');
+                    if (ModalRoute.of(context)!.settings.name != '/about') {
+                      Navigator.pushNamed(context, '/about');
                     }
                   },
                   child: Text(
-                    'About Us',
+                    'About',
                     style: TextStyle(
                         color: Color.fromRGBO(5, 5, 100, 1.0),
                         fontWeight: FontWeight.bold),
@@ -99,12 +99,12 @@ class DesktopAppBar extends StatelessWidget {
                 ),
                 TextButton(
                   onPressed: () {
-                    if (ModalRoute.of(context)!.settings.name != '/contect_us') {
-                      Navigator.pushNamed(context, '/contect_us');
+                    if (ModalRoute.of(context)!.settings.name != '/contect') {
+                      Navigator.pushNamed(context, '/contect');
                     }
                   },
                   child: Text(
-                    'Contect Us',
+                    'Contect',
                     style: TextStyle(
                         color: Color.fromRGBO(5, 5, 100, 1.0),
                         fontWeight: FontWeight.bold),

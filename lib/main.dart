@@ -20,9 +20,9 @@ class MyDevWeb extends StatelessWidget {
       initialRoute: "/home",
       routes: {
         "/home": (context) => HomePage(),
-        "/about_us": (context) => AboutUs(),
+        "/about": (context) => AboutUs(),
         "/product": (context) => Product(),
-        "/contect_us": (context) => ContactUs()
+        "/contect": (context) => ContactUs()
       },
     );
   }

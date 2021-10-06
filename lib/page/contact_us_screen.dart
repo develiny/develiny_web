@@ -1,5 +1,6 @@
 import 'package:develiny/app_bar.dart';
 import 'package:develiny/bottom_bar.dart';
+import 'package:develiny/get_size.dart';
 import 'package:develiny/navi_item.dart';
 import 'package:flutter/material.dart';
 
@@ -63,11 +64,12 @@ class ContactUsScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  'Contect Us',
+                  'Contect',
                   style: TextStyle(
                       color: Color.fromRGBO(5, 5, 100, 1.0),
                       fontWeight: FontWeight.bold),
                 ),
+                Text("If you have any questions about my services, or just want to say hello, feel free to contact me. Below are my email: "),
                 SizedBox(height: 20.0),
                 TextField(
                   controller: tecEmail,
@@ -82,8 +84,8 @@ class ContactUsScreen extends StatelessWidget {
                 SizedBox(height: 20.0),
                 TextField(
                   controller: tecContents,
-                  keyboardType: TextInputType.text,
-                  minLines: 15,
+                  keyboardType: TextInputType.multiline,
+                  minLines: 12,
                   maxLines: 100,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
