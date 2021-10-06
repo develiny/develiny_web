@@ -38,6 +38,7 @@ class ContactUsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController tecName = TextEditingController();
     TextEditingController tecEmail = TextEditingController();
     TextEditingController tecContents = TextEditingController();
     Size size = MediaQuery.of(context).size;
@@ -72,6 +73,17 @@ class ContactUsScreen extends StatelessWidget {
                 Text("If you have any questions about my services, or just want to say hello, feel free to contact me. Below are my email: "),
                 SizedBox(height: 20.0),
                 TextField(
+                  controller: tecName,
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0)),
+                      labelText: 'Your Name',
+                      hintText: 'Name'),
+                  autofocus: false,
+                ),
+                SizedBox(height: 20.0),
+                TextField(
                   controller: tecEmail,
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
@@ -90,8 +102,8 @@ class ContactUsScreen extends StatelessWidget {
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10.0)),
-                      labelText: 'Contect Us',
-                      hintText: 'contents'),
+                      labelText: 'Contect',
+                      hintText: 'Contents'),
                   autofocus: false,
                 ),
                 SizedBox(height: 20.0),

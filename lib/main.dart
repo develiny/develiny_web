@@ -1,5 +1,5 @@
-import 'package:develiny/page/about_us_screen.dart';
-import 'package:develiny/page/contact_us_screen.dart';
+import 'package:develiny/page/about_screen.dart';
+import 'package:develiny/page/contact_screen.dart';
 import 'package:develiny/page/home_sceen.dart';
 import 'package:develiny/page/product_screen.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +16,6 @@ class MyDevWeb extends StatelessWidget {
     return MaterialApp(
       title: 'develiny',
       theme: ThemeData(primaryColor: Colors.indigo),
-      // home: HomePage(),
       initialRoute: "/home",
       routes: {
         "/home": (context) => HomePage(),
