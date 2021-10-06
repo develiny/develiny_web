@@ -144,7 +144,9 @@ class MobileAppBar extends StatelessWidget {
               ),
               TextButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/');
+                  if (ModalRoute.of(context)!.settings.name != '/home') {
+                    Navigator.pushNamed(context, '/home');
+                  }
                 },
                 child: Row(
                   children: [
