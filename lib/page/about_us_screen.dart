@@ -138,6 +138,73 @@ class MobileAboutUsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    Size size = MediaQuery.of(context).size;
+    return Center(
+      child: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20.0),
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                  spreadRadius: 1,
+                  blurRadius: 1,
+                  offset: Offset(1, 1),
+                  color: Colors.grey)
+            ]),
+        padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 30.0),
+        width: size.width * 0.9,
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset('images/develinymainicon.png', width: size.width * 0.3,),
+              SizedBox(
+                height: 20.0,
+              ),
+              Text('Develiny',
+                  style: GoogleFonts.pacifico(
+                      fontSize: 25.0,
+                      color: Color.fromRGBO(5, 5, 100, 1.0))),
+              SizedBox(height: 20),
+              Text(
+                'Develiny develops services for the development of customers lives as a single developer.',
+                style: TextStyle(
+                    fontSize: 18.0, fontWeight: FontWeight.w400), textAlign: TextAlign.center,
+              ),
+              Divider(height: 40, thickness: 0.5,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      _launchURL('https://github.com/develiny/develiny_web');
+                    },
+                    child: Image.asset('images/githubicon.png',
+                        width: 30, height: 30),
+                  ),
+                  SizedBox(width: 15),
+                  InkWell(
+                    onTap: () {
+                      _launchURL('https://play.google.com/store/apps/dev?id=6375872941885163514');
+                    },
+                    child: Image.asset('images/playstoreicon.png',
+                        width: 30, height: 30),
+                  ),
+                  SizedBox(width: 15),
+                  InkWell(
+                    onTap: () {},
+                    child: Image.asset('images/appstoreicon.png',
+                        width: 30, height: 30),
+                  )
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+  void _launchURL(String _url) async {
+    await canLaunch(_url) ? await launch(_url) : throw 'Could not launch $_url';
   }
 }
