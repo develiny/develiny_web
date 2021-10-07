@@ -3,8 +3,10 @@ import 'package:develiny/page/contact_screen.dart';
 import 'package:develiny/page/home_sceen.dart';
 import 'package:develiny/page/product_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:url_strategy/url_strategy.dart';
 
 void main() {
+  setPathUrlStrategy();
   runApp(MyDevWeb());
 }
 

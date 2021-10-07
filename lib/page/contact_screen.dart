@@ -98,7 +98,7 @@ class ContactUsScreen extends StatelessWidget {
                   controller: tecContents,
                   keyboardType: TextInputType.multiline,
                   minLines: 12,
-                  maxLines: 100,
+                  maxLines: 50,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10.0)),
