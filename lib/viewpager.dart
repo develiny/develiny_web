@@ -117,7 +117,7 @@ class MyCustomScrollView extends StatelessWidget {
                           'https://play.google.com/store/apps/details?id=com.tistory.starcue.bgnoise');
                     },
                     child: Image.asset(
-                      'images/aaa.png',
+                      'images/relaxtourwidth.png',
                       // width: (!isMobile(context) ? size.width * 0.45 : size.width * 0.9),
                       // height: (!isMobile(context) ? 300 : 250),
                     ),
