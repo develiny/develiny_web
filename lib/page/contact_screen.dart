@@ -56,10 +56,11 @@ class ContactUsScreen extends StatelessWidget {
                     offset: Offset(1, 1),
                     color: Colors.grey)
               ]),
-          width: size.width * 0.7,
+          width: !isMobile(context) ? size.width * 0.7 : size.width * 0.9,
           child: Padding(
-            padding:
-                const EdgeInsets.symmetric(vertical: 20.0, horizontal: 40.0),
+            padding: !isMobile(context)
+                ? const EdgeInsets.symmetric(vertical: 20.0, horizontal: 40.0)
+                : const EdgeInsets.symmetric(vertical: 15.0, horizontal: 18.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -70,7 +71,8 @@ class ContactUsScreen extends StatelessWidget {
                       color: Color.fromRGBO(5, 5, 100, 1.0),
                       fontWeight: FontWeight.bold),
                 ),
-                Text("If you have any questions about my services, or just want to say hello, feel free to contact me. Below are my email: "),
+                Text(
+                    "If you have any questions about my services, or just want to say hello, feel free to contact me. Below are my email: "),
                 SizedBox(height: 20.0),
                 TextField(
                   controller: tecName,
@@ -108,9 +110,7 @@ class ContactUsScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 20.0),
                 ElevatedButton(
-                  onPressed: () {
-
-                  },
+                  onPressed: () {},
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
