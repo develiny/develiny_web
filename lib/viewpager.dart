@@ -122,15 +122,13 @@ class MyCustomScrollView extends StatelessWidget {
                       // height: (!isMobile(context) ? 300 : 250),
                     ),
                   ),
-                  Image.asset(
-                    'images/bbb.png',
-                    // width: (!isMobile(context) ? size.width * 0.45 : size.width * 0.9),
-                    // height: (!isMobile(context) ? 300 : 250),
-                  ),
-                  Image.asset(
-                    'images/ccc.png',
-                    // width: (!isMobile(context) ? size.width * 0.45 : size.width * 0.9),
-                    // height: (!isMobile(context) ? 300 : 250),
+                  InkWell(
+                    onTap: () {},
+                    child: Image.asset(
+                      'images/nhawidth.png',
+                      // width: (!isMobile(context) ? size.width * 0.45 : size.width * 0.9),
+                      // height: (!isMobile(context) ? 300 : 250),
+                    ),
                   ),
                 ],
               ),
