@@ -61,23 +61,22 @@ class DesktopProductList extends StatelessWidget {
     return Row(
       children: [
         Expanded(
-            flex: 1,
-            child: DesktopProductItem(
-              textSize: 17.0,
-              title: 'Relax Tour',
-              img: ClipRRect(
-                borderRadius: BorderRadius.circular(30.0),
-                child: Image.asset(
-                  'images/relaxtouricon.png',
-                  width: size.width * 0.1,
-                ),
+          child: DesktopProductItem(
+            textSize: 17.0,
+            title: 'Relax Tour',
+            img: ClipRRect(
+              borderRadius: BorderRadius.circular(30.0),
+              child: Image.asset(
+                'images/relaxtouricon.png',
+                width: size.width * 0.1,
               ),
-              text:
-                  'Are you not satisfied with your relaxation?\n\ndo you want your break time to be more efficient?\nThe solution is in this app Relax Tour',
-            )),
+            ),
+            text:
+                'Are you not satisfied with your relaxation?\n\ndo you want your break time to be more efficient?\nThe solution is in this app Relax Tour',
+          ),
+        ),
         SizedBox(width: 30.0),
         Expanded(
-          flex: 1,
           child: DesktopProductItem(
             textSize: 15.0,
             title: '나훈아 노래모음',
@@ -154,8 +153,7 @@ class MobileProductList extends StatelessWidget {
         ),
         SizedBox(height: 20.0),
         MobileProductItem(
-          img:
-              Image.asset('images/nhaicon.png', width: size.width * 0.27),
+          img: Image.asset('images/nhaicon.png', width: size.width * 0.27),
           title: '나훈아 노래모음',
           text:
               '국민가수 나훈아 노래를 인기순으로 볼 수 있습니다.\n\n나훈아 팬분들의 연령을 감안해 최대한 간단한 조작법으로 재작되었습니다.\n나훈아의 모든 노래를 영상과 함께 무료로 감상하세요!',
@@ -217,11 +215,9 @@ class DesktopProductItem extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Expanded(
-                      child: Text(
-                        text,
-                        style: TextStyle(fontSize: textSize),
-                      ),
+                    child: Text(
+                      text,
+                      style: TextStyle(fontSize: textSize),
                     ),
                   ),
                   Row(
@@ -296,11 +292,9 @@ class TabProductItem extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Expanded(
-                      child: Text(
-                        text,
-                        style: TextStyle(fontSize: textSize),
-                      ),
+                    child: Text(
+                      text,
+                      style: TextStyle(fontSize: textSize),
                     ),
                   ),
                   Row(
