@@ -27,7 +27,9 @@ class AboutUs extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               MyAppBar(),
-              (!isMobile(context) ? DesktopAbountUsScreen() : MobileAboutUsScreen()),
+              (!isMobile(context)
+                  ? DesktopAbountUsScreen()
+                  : MobileAboutUsScreen()),
               BottomBar(),
             ],
           ),
@@ -82,7 +84,8 @@ class DesktopAbountUsScreen extends StatelessWidget {
                       children: [
                         InkWell(
                           onTap: () {
-                            _launchURL('https://github.com/develiny/develiny_web');
+                            _launchURL(
+                                'https://github.com/develiny/develiny_web');
                           },
                           child: Image.asset('images/githubicon.png',
                               width: 30, height: 30),
@@ -90,7 +93,8 @@ class DesktopAbountUsScreen extends StatelessWidget {
                         SizedBox(width: 15),
                         InkWell(
                           onTap: () {
-                            _launchURL('https://play.google.com/store/apps/dev?id=6375872941885163514');
+                            _launchURL(
+                                'https://play.google.com/store/apps/dev?id=6375872941885163514');
                           },
                           child: Image.asset('images/playstoreicon.png',
                               width: 30, height: 30),
@@ -174,32 +178,38 @@ class MobileAboutUsScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset('images/develinymainicon.png', width: size.width * 0.3,),
+              Image.asset(
+                'images/develinymainicon.png',
+                width: size.width * 0.3,
+              ),
               SizedBox(
                 height: 20.0,
               ),
               Text('Develiny',
                   style: GoogleFonts.pacifico(
-                      fontSize: 25.0,
-                      color: Color.fromRGBO(5, 5, 100, 1.0))),
+                      fontSize: 25.0, color: Color.fromRGBO(5, 5, 100, 1.0))),
               SizedBox(height: 20),
               Text(
                 "Develiny is a freelancer who lives in Korea.",
-                style: TextStyle(
-                    fontSize: 18.0, fontWeight: FontWeight.w400), textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w400),
+                textAlign: TextAlign.center,
               ),
               SizedBox(height: 10),
               Text(
                 "I'm developing a one-man developer app or web service. My area of expertise is developing hybrid web apps and Android native apps.",
-                style: TextStyle(
-                    fontSize: 18.0, fontWeight: FontWeight.w400), textAlign: TextAlign.center,
-              ),SizedBox(height: 10),
+                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w400),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 10),
               Text(
                 "Let's make something special.",
-                style: TextStyle(
-                    fontSize: 18.0, fontWeight: FontWeight.w400), textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w400),
+                textAlign: TextAlign.center,
               ),
-              Divider(height: 40, thickness: 0.5,),
+              Divider(
+                height: 40,
+                thickness: 0.5,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -213,7 +223,8 @@ class MobileAboutUsScreen extends StatelessWidget {
                   SizedBox(width: 15),
                   InkWell(
                     onTap: () {
-                      _launchURL('https://play.google.com/store/apps/dev?id=6375872941885163514');
+                      _launchURL(
+                          'https://play.google.com/store/apps/dev?id=6375872941885163514');
                     },
                     child: Image.asset('images/playstoreicon.png',
                         width: 30, height: 30),
@@ -232,6 +243,7 @@ class MobileAboutUsScreen extends StatelessWidget {
       ),
     );
   }
+
   void _launchURL(String _url) async {
     await canLaunch(_url) ? await launch(_url) : throw 'Could not launch $_url';
   }

@@ -91,7 +91,7 @@ class HomeScreen extends StatelessWidget {
                       height: size.height * 0.3,
                       fit: BoxFit.fill,
                     ),
-                  MainText()
+                  !isMobile(context) ? MainTextDesktop() : MainTextMobile()
                 ],
               ),
             ),
@@ -111,18 +111,14 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class MainText extends StatelessWidget {
-  const MainText({Key? key}) : super(key: key);
+class MainTextDesktop extends StatelessWidget {
+  const MainTextDesktop({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: !isMobile(context)
-          ? MainAxisAlignment.start
-          : MainAxisAlignment.center,
-      crossAxisAlignment: !isMobile(context)
-          ? CrossAxisAlignment.start
-          : CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         RichText(
           text: TextSpan(children: [
@@ -146,27 +142,32 @@ class MainText extends StatelessWidget {
                 text: 'Take a',
                 style: TextStyle(
                     fontSize: isDesktop(context) ? 64 : 32,
-                    fontWeight: FontWeight.w800, color: Colors.black)),
+                    fontWeight: FontWeight.w800,
+                    color: Colors.black)),
             TextSpan(
                 text: ' look',
                 style: TextStyle(
                     fontSize: isDesktop(context) ? 64 : 32,
-                    fontWeight: FontWeight.w800, color: Colors.black)),
+                    fontWeight: FontWeight.w800,
+                    color: Colors.black)),
             TextSpan(
                 text: ' at ',
                 style: TextStyle(
                     fontSize: isDesktop(context) ? 64 : 32,
-                    fontWeight: FontWeight.w800, color: Colors.black)),
+                    fontWeight: FontWeight.w800,
+                    color: Colors.black)),
             TextSpan(
                 text: 'our ',
                 style: TextStyle(
                     fontSize: isDesktop(context) ? 64 : 32,
-                    fontWeight: FontWeight.w800, color: Colors.black)),
+                    fontWeight: FontWeight.w800,
+                    color: Colors.black)),
             TextSpan(
                 text: 'product',
                 style: TextStyle(
                     fontSize: isDesktop(context) ? 64 : 32,
-                    fontWeight: FontWeight.w800, color: Colors.black))
+                    fontWeight: FontWeight.w800,
+                    color: Colors.black))
           ]),
         ),
         SizedBox(
@@ -177,24 +178,59 @@ class MainText extends StatelessWidget {
             TextSpan(
                 text: 'Advertising and business ',
                 style: TextStyle(
-                  fontSize: isDesktop(context)
-                      ? 32
-                      : isTab(context)
-                          ? 20
-                          : 20,
-                  fontWeight: FontWeight.w500, color: Colors.black
-                )),
+                    fontSize: isDesktop(context)
+                        ? 32
+                        : isTab(context)
+                            ? 20
+                            : 20,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black)),
             TextSpan(
                 text: 'inquiries are always welcome.',
                 style: TextStyle(
-                  fontSize: isDesktop(context)
-                      ? 32
-                      : isTab(context)
-                          ? 20
-                          : 20,
-                  fontWeight: FontWeight.w500, color: Colors.black
-                ))
+                    fontSize: isDesktop(context)
+                        ? 32
+                        : isTab(context)
+                            ? 20
+                            : 20,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black))
           ]),
+        )
+      ],
+    );
+  }
+}
+
+class MainTextMobile extends StatelessWidget {
+  const MainTextMobile({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Text('Welcom to',
+            style: TextStyle(
+                fontSize: 32, fontWeight: FontWeight.w800, color: Colors.black),
+            textAlign: TextAlign.center),
+        Text('Develiny',
+            style: TextStyle(
+                fontSize: 32,
+                fontWeight: FontWeight.w800,
+                color: Colors.indigo),
+            textAlign: TextAlign.center),
+        Text('Take a look at our product',
+            style: TextStyle(
+                fontSize: 32, fontWeight: FontWeight.w800, color: Colors.black),
+            textAlign: TextAlign.center),
+        SizedBox(height: 30.0),
+        Text(
+          'Advertising and business inquiries are always welcome.',
+          style: TextStyle(
+              fontSize: 20, fontWeight: FontWeight.w500, color: Colors.black),
+          textAlign: TextAlign.center,
         )
       ],
     );
