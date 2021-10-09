@@ -123,7 +123,9 @@ class MyCustomScrollView extends StatelessWidget {
                     ),
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      _launchURL('https://play.google.com/store/apps/details?id=com.tistory.starcue.songgainb');
+                    },
                     child: Image.asset(
                       'images/nhawidth.png',
                       // width: (!isMobile(context) ? size.width * 0.45 : size.width * 0.9),

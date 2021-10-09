@@ -1,6 +1,5 @@
 import 'package:develiny/page/about_screen.dart';
 import 'package:develiny/page/contact_screen.dart';
-import 'package:develiny/page/detail_screen.dart';
 import 'package:develiny/page/home_sceen.dart';
 import 'package:develiny/page/product_screen.dart';
 import 'package:flutter/material.dart';
@@ -24,8 +23,7 @@ class MyDevWeb extends StatelessWidget {
         "/home": (context) => HomePage(),
         "/about": (context) => AboutUs(),
         "/product": (context) => Product(),
-        "/contect": (context) => ContactUs(),
-        "/product/detail": (context) => DetailScreen()
+        "/contect": (context) => ContactUs()
       },
     );
   }

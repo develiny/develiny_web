@@ -3,6 +3,7 @@ import 'package:develiny/bottom_bar.dart';
 import 'package:develiny/get_size.dart';
 import 'package:develiny/navi_item.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Product extends StatelessWidget {
   const Product({Key? key}) : super(key: key);
@@ -74,7 +75,7 @@ class DesktopProductList extends StatelessWidget {
             text:
                 'Are you not satisfied with your relaxation?\n\ndo you want your break time to be more efficient?\nThe solution is in this app Relax Tour',
             onPressed: () {
-              PassRelaxTour.passRelaxTour(context);
+              LaunchUrl._launchURLRelaxTour();
             },
           ),
         ),
@@ -93,7 +94,7 @@ class DesktopProductList extends StatelessWidget {
             text:
                 '국민가수 나훈아 노래를 인기순으로 볼 수 있습니다.\n나훈아 팬분들의 연령을 감안해 최대한 간단한 조작법으로 재작되었습니다.\n나훈아의 모든 노래를 영상과 함께 무료로 감상하세요!',
             onPressed: () {
-              Navigator.pushNamed(context, '/product/detail');
+              LaunchUrl._launchURLNha();
             },
           ),
         ),
@@ -121,6 +122,9 @@ class TabProductList extends StatelessWidget {
           text:
               'Are you not satisfied with your relaxation?\n\ndo you want your break time to be more efficient?\nThe solution is in this app Relax Tour',
           textSize: 17.0,
+          onPressed: () {
+            LaunchUrl._launchURLRelaxTour();
+          },
         ),
         SizedBox(height: 30.0),
         TabProductItem(
@@ -135,6 +139,9 @@ class TabProductList extends StatelessWidget {
           text:
               '국민가수 나훈아 노래를 인기순으로 볼 수 있습니다.\n\n나훈아 팬분들의 연령을 감안해 최대한 간단한 조작법으로 재작되었습니다.\n나훈아의 모든 노래를 영상과 함께 무료로 감상하세요!',
           textSize: 14.0,
+          onPressed: () {
+            LaunchUrl._launchURLNha();
+          },
         ),
       ],
     );
@@ -156,6 +163,9 @@ class MobileProductList extends StatelessWidget {
           text:
               'Are you not satisfied with your relaxation?\n\ndo you want your break time to be more efficient?\nThe solution is in this app Relax Tour',
           size: size,
+          onPressed: () {
+            LaunchUrl._launchURLRelaxTour();
+          },
         ),
         SizedBox(height: 20.0),
         MobileProductItem(
@@ -164,6 +174,9 @@ class MobileProductList extends StatelessWidget {
           text:
               '국민가수 나훈아 노래를 인기순으로 볼 수 있습니다.\n\n나훈아 팬분들의 연령을 감안해 최대한 간단한 조작법으로 재작되었습니다.\n나훈아의 모든 노래를 영상과 함께 무료로 감상하세요!',
           size: size,
+          onPressed: () {
+            LaunchUrl._launchURLNha();
+          },
         )
       ],
     );
@@ -268,13 +281,15 @@ class TabProductItem extends StatelessWidget {
       required this.title,
       required this.img,
       required this.text,
-      required this.textSize})
+      required this.textSize,
+      required this.onPressed})
       : super(key: key);
 
   final String title;
   final Widget img;
   final String text;
   final double textSize;
+  final GestureTapCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -326,7 +341,7 @@ class TabProductItem extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             ElevatedButton(
-                              onPressed: () {},
+                              onPressed: onPressed,
                               child: Text('VIEW MORE'),
                               style: ElevatedButton.styleFrom(
                                   primary: Color.fromRGBO(5, 5, 100, 1.0)),
@@ -358,13 +373,15 @@ class MobileProductItem extends StatelessWidget {
       required this.img,
       required this.title,
       required this.text,
-      required this.size})
+      required this.size,
+      required this.onPressed})
       : super(key: key);
 
   final Widget img;
   final String title;
   final String text;
   final Size size;
+  final GestureTapCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -402,7 +419,7 @@ class MobileProductItem extends StatelessWidget {
           ),
           SizedBox(height: 20.0),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: onPressed,
             child: Text('VIEW MORE'),
             style: ElevatedButton.styleFrom(
                 primary: Color.fromRGBO(5, 5, 100, 1.0)),
@@ -415,9 +432,14 @@ class MobileProductItem extends StatelessWidget {
   }
 }
 
-class PassRelaxTour {
-  static void passRelaxTour(BuildContext context) {
-    String title = 'relax tour';
-    Navigator.pushNamed(context, '/product/detail', arguments: {'title': title});
+class LaunchUrl {
+  static void _launchURLRelaxTour() async {
+    String _url = 'https://play.google.com/store/apps/details?id=com.tistory.starcue.bgnoise';
+    await canLaunch(_url) ? await launch(_url) : throw 'Could not launch $_url';
+  }
+
+  static void _launchURLNha() async {
+    String _url = 'https://play.google.com/store/apps/details?id=com.tistory.starcue.songgainb';
+    await canLaunch(_url) ? await launch(_url) : throw 'Could not launch $_url';
   }
 }

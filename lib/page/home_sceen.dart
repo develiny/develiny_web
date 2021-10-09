@@ -53,12 +53,6 @@ class _HomePageState extends State<HomePage> {
             children: [
               MyAppBar(),
               HomeScreen(),
-              // Container(
-              //   height: 500,
-              //   width: double.infinity,
-              //   color: Colors.grey,
-              //   child: Image.asset('images/relaxtouricon.png', fit: BoxFit.fill,),
-              // ),
               ViewPager(),
               BottomBar(),
             ],
