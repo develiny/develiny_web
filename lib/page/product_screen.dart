@@ -2,7 +2,7 @@ import 'package:develiny/app_bar.dart';
 import 'package:develiny/bottom_bar.dart';
 import 'package:develiny/get_size.dart';
 import 'package:develiny/navi_item.dart';
-import 'package:develiny/privacy_policy/privacy_policy.dart';
+import 'package:develiny/privacy_policy/privacy_policy_relax_tour.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 

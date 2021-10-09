@@ -2,7 +2,8 @@ import 'package:develiny/page/about_screen.dart';
 import 'package:develiny/page/contact_screen.dart';
 import 'package:develiny/page/home_sceen.dart';
 import 'package:develiny/page/product_screen.dart';
-import 'package:develiny/privacy_policy/privacy_policy.dart';
+import 'package:develiny/privacy_policy/privacy_policy_nha.dart';
+import 'package:develiny/privacy_policy/privacy_policy_relax_tour.dart';
 import 'package:flutter/material.dart';
 import 'package:url_strategy/url_strategy.dart';
 
