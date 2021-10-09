@@ -2,6 +2,7 @@ import 'package:develiny/page/about_screen.dart';
 import 'package:develiny/page/contact_screen.dart';
 import 'package:develiny/page/home_sceen.dart';
 import 'package:develiny/page/product_screen.dart';
+import 'package:develiny/privacy_policy/privacy_policy.dart';
 import 'package:flutter/material.dart';
 import 'package:url_strategy/url_strategy.dart';
 
@@ -23,7 +24,9 @@ class MyDevWeb extends StatelessWidget {
         "/home": (context) => HomePage(),
         "/about": (context) => AboutUs(),
         "/product": (context) => Product(),
-        "/contect": (context) => ContactUs()
+        "/contect": (context) => ContactUs(),
+        "/product/relax_tour_privacy_policy": (context) => PrivacyPolicyRelaxTour(),
+        "/product/nha_privacy_policy": (context) => PrivacyPolicyNha()
       },
     );
   }

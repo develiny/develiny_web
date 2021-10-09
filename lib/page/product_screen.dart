@@ -2,6 +2,7 @@ import 'package:develiny/app_bar.dart';
 import 'package:develiny/bottom_bar.dart';
 import 'package:develiny/get_size.dart';
 import 'package:develiny/navi_item.dart';
+import 'package:develiny/privacy_policy/privacy_policy.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -77,6 +78,10 @@ class DesktopProductList extends StatelessWidget {
             onPressed: () {
               LaunchUrl._launchURLRelaxTour();
             },
+            privacyPressed: () {
+              Navigator.pushNamed(
+                  context, '/product/relax_tour_privacy_policy');
+            },
           ),
         ),
         SizedBox(width: 30.0),
@@ -95,6 +100,9 @@ class DesktopProductList extends StatelessWidget {
                 '국민가수 나훈아 노래를 인기순으로 볼 수 있습니다.\n나훈아 팬분들의 연령을 감안해 최대한 간단한 조작법으로 재작되었습니다.\n나훈아의 모든 노래를 영상과 함께 무료로 감상하세요!',
             onPressed: () {
               LaunchUrl._launchURLNha();
+            },
+            privacyPressed: () {
+              Navigator.pushNamed(context, '/product/nha_privacy_policy');
             },
           ),
         ),
@@ -125,6 +133,9 @@ class TabProductList extends StatelessWidget {
           onPressed: () {
             LaunchUrl._launchURLRelaxTour();
           },
+          privacyPressed: () {
+            Navigator.pushNamed(context, '/product/relax_tour_privacy_policy');
+          },
         ),
         SizedBox(height: 30.0),
         TabProductItem(
@@ -141,6 +152,9 @@ class TabProductList extends StatelessWidget {
           textSize: 14.0,
           onPressed: () {
             LaunchUrl._launchURLNha();
+          },
+          privacyPressed: () {
+            Navigator.pushNamed(context, '/product/nha_privacy_policy');
           },
         ),
       ],
@@ -166,6 +180,9 @@ class MobileProductList extends StatelessWidget {
           onPressed: () {
             LaunchUrl._launchURLRelaxTour();
           },
+          privacyPressed: () {
+            Navigator.pushNamed(context, '/product/relax_tour_privacy_policy');
+          },
         ),
         SizedBox(height: 20.0),
         MobileProductItem(
@@ -176,6 +193,9 @@ class MobileProductList extends StatelessWidget {
           size: size,
           onPressed: () {
             LaunchUrl._launchURLNha();
+          },
+          privacyPressed: () {
+            Navigator.pushNamed(context, '/product/nha_privacy_policy');
           },
         )
       ],
@@ -190,7 +210,8 @@ class DesktopProductItem extends StatelessWidget {
       required this.img,
       required this.text,
       required this.textSize,
-      required this.onPressed})
+      required this.onPressed,
+      required this.privacyPressed})
       : super(key: key);
 
   final String title;
@@ -198,6 +219,7 @@ class DesktopProductItem extends StatelessWidget {
   final String text;
   final double textSize;
   final GestureTapCallback onPressed;
+  final GestureTapCallback privacyPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -266,7 +288,8 @@ class DesktopProductItem extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextButton(onPressed: () {}, child: Text('Privacy Policy'))
+              TextButton(
+                  onPressed: privacyPressed, child: Text('Privacy Policy'))
             ],
           )
         ],
@@ -282,7 +305,8 @@ class TabProductItem extends StatelessWidget {
       required this.img,
       required this.text,
       required this.textSize,
-      required this.onPressed})
+      required this.onPressed,
+      required this.privacyPressed})
       : super(key: key);
 
   final String title;
@@ -290,6 +314,7 @@ class TabProductItem extends StatelessWidget {
   final String text;
   final double textSize;
   final GestureTapCallback onPressed;
+  final GestureTapCallback privacyPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -358,7 +383,8 @@ class TabProductItem extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextButton(onPressed: () {}, child: Text('Privacy Policy'))
+              TextButton(
+                  onPressed: privacyPressed, child: Text('Privacy Policy'))
             ],
           )
         ],
@@ -374,7 +400,8 @@ class MobileProductItem extends StatelessWidget {
       required this.title,
       required this.text,
       required this.size,
-      required this.onPressed})
+      required this.onPressed,
+      required this.privacyPressed})
       : super(key: key);
 
   final Widget img;
@@ -382,6 +409,7 @@ class MobileProductItem extends StatelessWidget {
   final String text;
   final Size size;
   final GestureTapCallback onPressed;
+  final GestureTapCallback privacyPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -425,7 +453,7 @@ class MobileProductItem extends StatelessWidget {
                 primary: Color.fromRGBO(5, 5, 100, 1.0)),
           ),
           SizedBox(height: 20.0),
-          TextButton(onPressed: () {}, child: Text('Privacy Policy'))
+          TextButton(onPressed: privacyPressed, child: Text('Privacy Policy'))
         ],
       ),
     );
@@ -434,12 +462,14 @@ class MobileProductItem extends StatelessWidget {
 
 class LaunchUrl {
   static void _launchURLRelaxTour() async {
-    String _url = 'https://play.google.com/store/apps/details?id=com.tistory.starcue.bgnoise';
+    String _url =
+        'https://play.google.com/store/apps/details?id=com.tistory.starcue.bgnoise';
     await canLaunch(_url) ? await launch(_url) : throw 'Could not launch $_url';
   }
 
   static void _launchURLNha() async {
-    String _url = 'https://play.google.com/store/apps/details?id=com.tistory.starcue.songgainb';
+    String _url =
+        'https://play.google.com/store/apps/details?id=com.tistory.starcue.songgainb';
     await canLaunch(_url) ? await launch(_url) : throw 'Could not launch $_url';
   }
 }
