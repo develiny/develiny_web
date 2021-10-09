@@ -73,6 +73,9 @@ class DesktopProductList extends StatelessWidget {
             ),
             text:
                 'Are you not satisfied with your relaxation?\n\ndo you want your break time to be more efficient?\nThe solution is in this app Relax Tour',
+            onPressed: () {
+              PassRelaxTour.passRelaxTour(context);
+            },
           ),
         ),
         SizedBox(width: 30.0),
@@ -89,6 +92,9 @@ class DesktopProductList extends StatelessWidget {
             ),
             text:
                 '국민가수 나훈아 노래를 인기순으로 볼 수 있습니다.\n나훈아 팬분들의 연령을 감안해 최대한 간단한 조작법으로 재작되었습니다.\n나훈아의 모든 노래를 영상과 함께 무료로 감상하세요!',
+            onPressed: () {
+              Navigator.pushNamed(context, '/product/detail');
+            },
           ),
         ),
       ],
@@ -170,13 +176,15 @@ class DesktopProductItem extends StatelessWidget {
       required this.title,
       required this.img,
       required this.text,
-      required this.textSize})
+      required this.textSize,
+      required this.onPressed})
       : super(key: key);
 
   final String title;
   final Widget img;
   final String text;
   final double textSize;
+  final GestureTapCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -193,47 +201,60 @@ class DesktopProductItem extends StatelessWidget {
                 color: Colors.grey)
           ]),
       padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
-      child: Row(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              img,
-              Text(title,
-                  style: TextStyle(
-                      color: Color.fromRGBO(5, 5, 100, 1.0),
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold))
-            ],
-          ),
           Expanded(
-            child: Padding(
-              padding: const EdgeInsets.only(
-                  right: 10.0, bottom: 10.0, top: 20.0, left: 20.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Text(
-                      text,
-                      style: TextStyle(fontSize: textSize),
+            child: Row(
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    img,
+                    Text(title,
+                        style: TextStyle(
+                            color: Color.fromRGBO(5, 5, 100, 1.0),
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold))
+                  ],
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                        right: 10.0, bottom: 10.0, top: 20.0, left: 20.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Text(
+                            text,
+                            style: TextStyle(fontSize: textSize),
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            ElevatedButton(
+                              onPressed: onPressed,
+                              child: Text('VIEW MORE'),
+                              style: ElevatedButton.styleFrom(
+                                  primary: Color.fromRGBO(5, 5, 100, 1.0)),
+                            ),
+                          ],
+                        )
+                      ],
                     ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: Text('VIEW MORE'),
-                        style: ElevatedButton.styleFrom(
-                            primary: Color.fromRGBO(5, 5, 100, 1.0)),
-                      ),
-                    ],
-                  )
-                ],
-              ),
+                )
+              ],
             ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextButton(onPressed: () {}, child: Text('Privacy Policy'))
+            ],
           )
         ],
       ),
@@ -270,47 +291,60 @@ class TabProductItem extends StatelessWidget {
                 color: Colors.grey)
           ]),
       padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 15.0),
-      child: Row(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              img,
-              Text(title,
-                  style: TextStyle(
-                      color: Color.fromRGBO(5, 5, 100, 1.0),
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold))
-            ],
-          ),
           Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
+            child: Row(
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    img,
+                    Text(title,
+                        style: TextStyle(
+                            color: Color.fromRGBO(5, 5, 100, 1.0),
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold))
+                  ],
+                ),
+                Expanded(
+                  child: Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Text(
-                      text,
-                      style: TextStyle(fontSize: textSize),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Text(
+                            text,
+                            style: TextStyle(fontSize: textSize),
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {},
+                              child: Text('VIEW MORE'),
+                              style: ElevatedButton.styleFrom(
+                                  primary: Color.fromRGBO(5, 5, 100, 1.0)),
+                            ),
+                          ],
+                        )
+                      ],
                     ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: Text('VIEW MORE'),
-                        style: ElevatedButton.styleFrom(
-                            primary: Color.fromRGBO(5, 5, 100, 1.0)),
-                      ),
-                    ],
-                  )
-                ],
-              ),
+                )
+              ],
             ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextButton(onPressed: () {}, child: Text('Privacy Policy'))
+            ],
           )
         ],
       ),
@@ -373,8 +407,17 @@ class MobileProductItem extends StatelessWidget {
             style: ElevatedButton.styleFrom(
                 primary: Color.fromRGBO(5, 5, 100, 1.0)),
           ),
+          SizedBox(height: 20.0),
+          TextButton(onPressed: () {}, child: Text('Privacy Policy'))
         ],
       ),
     );
+  }
+}
+
+class PassRelaxTour {
+  static void passRelaxTour(BuildContext context) {
+    String title = 'relax tour';
+    Navigator.pushNamed(context, '/product/detail', arguments: {'title': title});
   }
 }
