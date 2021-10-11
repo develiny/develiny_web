@@ -51,7 +51,9 @@ class PrivacyPolicyRelaxTourDesktop extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
                   icon: Icon(Icons.arrow_back_ios),
                   iconSize: 20.0,
                 ),
