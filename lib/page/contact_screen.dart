@@ -172,28 +172,32 @@ class ContactUsScreen extends StatelessWidget {
             r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
         .hasMatch(email);
     if (!checkEmail) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text('check your email', textAlign: TextAlign.center),
-        duration: Duration(seconds: 3),
-        backgroundColor: Colors.indigo,
-      ));
+      openSnackBar(context, 'Please check you email');
     } else if (name.length == 0) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text('check your name', textAlign: TextAlign.center),
-        duration: Duration(seconds: 3),
-        backgroundColor: Colors.indigo,
-      ));
+      openSnackBar(context, 'Please check you name');
     } else if (body.length == 0) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text('check your subject', textAlign: TextAlign.center),
-        duration: Duration(seconds: 3),
-        backgroundColor: Colors.indigo,
-      ));
+      openSnackBar(context, 'Please check you body');
     } else {
       openEmail(
           toEmail: 'develiny9@gmail.com',
           subject: 'develiny website contact to $name',
           body: 'email: $email \n $body');
     }
+  }
+
+  void openSnackBar(BuildContext context, String msg) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text(msg, textAlign: !isMobile(context) ? TextAlign.center : TextAlign.start),
+      duration: Duration(seconds: 2),
+      backgroundColor: Colors.indigo,
+      action: SnackBarAction(
+        label: 'Close',
+        textColor: Colors.lightBlueAccent,
+        onPressed: () {},
+      ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(topLeft: Radius.circular(15.0), topRight: Radius.circular(15.0))
+      ),
+    ));
   }
 }
