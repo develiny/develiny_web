@@ -23,8 +23,8 @@ class DesktopBottom extends StatelessWidget {
             flex: 1,
             child: TextButton(
               onPressed: () {
-                if (ModalRoute.of(context)!.settings.name != '/contect') {
-                  Navigator.pushNamed(context, '/contect');
+                if (ModalRoute.of(context)!.settings.name != '/contact') {
+                  Navigator.pushNamed(context, '/contact');
                 }
               },
               child: Text('develiny9@gmail.com'),
@@ -87,8 +87,8 @@ class MobileBottom extends StatelessWidget {
           SizedBox(height: 10),
           TextButton(
             onPressed: () {
-              if (ModalRoute.of(context)!.settings.name != '/contect') {
-                Navigator.pushNamed(context, '/contect');
+              if (ModalRoute.of(context)!.settings.name != '/contact') {
+                Navigator.pushNamed(context, '/contact');
               }
             },
             child: Text('develiny9@gmail.com'),

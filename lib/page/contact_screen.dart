@@ -66,7 +66,7 @@ class ContactUsScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  'Contect',
+                  'Contact',
                   style: TextStyle(
                       color: Color.fromRGBO(5, 5, 100, 1.0),
                       fontWeight: FontWeight.bold),
@@ -104,7 +104,7 @@ class ContactUsScreen extends StatelessWidget {
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10.0)),
-                      labelText: 'Contect',
+                      labelText: 'Contact',
                       hintText: 'Contents'),
                   autofocus: false,
                 ),

@@ -99,12 +99,12 @@ class DesktopAppBar extends StatelessWidget {
                 ),
                 TextButton(
                   onPressed: () {
-                    if (ModalRoute.of(context)!.settings.name != '/contect') {
-                      Navigator.pushNamed(context, '/contect');
+                    if (ModalRoute.of(context)!.settings.name != '/contact') {
+                      Navigator.pushNamed(context, '/contact');
                     }
                   },
                   child: Text(
-                    'Contect',
+                    'Contact',
                     style: TextStyle(
                         color: Color.fromRGBO(5, 5, 100, 1.0),
                         fontWeight: FontWeight.bold),

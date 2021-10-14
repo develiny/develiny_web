@@ -32,9 +32,9 @@ class NavItem extends StatelessWidget {
                 }
               }),
               SizedBox(height: 20.0),
-              NavItems(title: 'Contect', tapEvent: () {
-                if (ModalRoute.of(context)!.settings.name != '/contect') {
-                  Navigator.pushNamed(context, '/contect');
+              NavItems(title: 'Contact', tapEvent: () {
+                if (ModalRoute.of(context)!.settings.name != '/contact') {
+                  Navigator.pushNamed(context, '/contact');
                 }
               })
             ],

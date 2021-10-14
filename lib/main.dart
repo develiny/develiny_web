@@ -25,7 +25,7 @@ class MyDevWeb extends StatelessWidget {
         "/home": (context) => HomePage(),
         "/about": (context) => AboutUs(),
         "/product": (context) => Product(),
-        "/contect": (context) => ContactUs(),
+        "/contact": (context) => ContactUs(),
         "/product/relax_tour_privacy_policy": (context) => PrivacyPolicyRelaxTour(),
         "/product/nha_privacy_policy": (context) => PrivacyPolicyNha()
       },
