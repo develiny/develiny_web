@@ -3,6 +3,7 @@ import 'package:develiny/bottom_bar.dart';
 import 'package:develiny/get_size.dart';
 import 'package:develiny/navi_item.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ContactUs extends StatelessWidget {
   const ContactUs({Key? key}) : super(key: key);
@@ -40,7 +41,7 @@ class ContactUsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     TextEditingController tecName = TextEditingController();
     TextEditingController tecEmail = TextEditingController();
-    TextEditingController tecContents = TextEditingController();
+    TextEditingController tecBody = TextEditingController();
     Size size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20.0),
@@ -71,8 +72,14 @@ class ContactUsScreen extends StatelessWidget {
                       color: Color.fromRGBO(5, 5, 100, 1.0),
                       fontWeight: FontWeight.bold),
                 ),
-                Text(
-                    "If you have any questions about my services, or just want to say hello, feel free to contact me. Below are my email: "),
+                Padding(
+                  padding: !isMobile(context)
+                      ? EdgeInsets.symmetric(vertical: 20.0, horizontal: 40.0)
+                      : EdgeInsets.symmetric(vertical: 15.0, horizontal: 15.0),
+                  child: Text(
+                      "we're happy to answer any questions you have or provide you with an estimate. just send us a message in the from below with any questions you may have.",
+                  style: TextStyle(height: 1.5),),
+                ),
                 SizedBox(height: 20.0),
                 TextField(
                   controller: tecName,
@@ -97,7 +104,7 @@ class ContactUsScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 20.0),
                 TextField(
-                  controller: tecContents,
+                  controller: tecBody,
                   keyboardType: TextInputType.multiline,
                   minLines: 12,
                   maxLines: 50,
@@ -110,7 +117,13 @@ class ContactUsScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 20.0),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    String name = tecName.text;
+                    String email = tecEmail.text;
+                    String body = tecBody.text;
+                    checkText(
+                        context: context, email: email, name: name, body: body);
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -133,5 +146,54 @@ class ContactUsScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future openEmail(
+      {required String toEmail,
+      required String subject,
+      required String body}) async {
+    final url =
+        'mailto:$toEmail?subject=${Uri.encodeFull(subject)}&body=${Uri.encodeFull(body)}';
+    await _launchUrl(url);
+  }
+
+  Future _launchUrl(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    }
+  }
+
+  void checkText(
+      {required BuildContext context,
+      required String email,
+      required String name,
+      required String body}) {
+    bool checkEmail = RegExp(
+            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+        .hasMatch(email);
+    if (!checkEmail) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text('check your email', textAlign: TextAlign.center),
+        duration: Duration(seconds: 3),
+        backgroundColor: Colors.indigo,
+      ));
+    } else if (name.length == 0) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text('check your name', textAlign: TextAlign.center),
+        duration: Duration(seconds: 3),
+        backgroundColor: Colors.indigo,
+      ));
+    } else if (body.length == 0) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text('check your subject', textAlign: TextAlign.center),
+        duration: Duration(seconds: 3),
+        backgroundColor: Colors.indigo,
+      ));
+    } else {
+      openEmail(
+          toEmail: 'develiny9@gmail.com',
+          subject: 'develiny website contact to $name',
+          body: 'email: $email \n $body');
+    }
   }
 }
