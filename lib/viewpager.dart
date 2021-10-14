@@ -158,32 +158,25 @@ class ViewPagerText extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Introducing our products.',
+                  "Here are a few design projects I've worked on recently.\nWant to see more?",
                   textAlign: TextAlign.start,
                   maxLines: 10,
-                  style: TextStyle(fontSize: 30, color: Colors.white),
+                  style: TextStyle(fontSize: 20, color: Colors.white, height: 1.5),
                 ),
-                // RichText(
-                //   text: TextSpan(children: [
-                //     TextSpan(
-                //       text: 'Introducing ', style: TextStyle(fontSize: 30, color: Colors.white)
-                //     ),
-                //     TextSpan(
-                //         text: 'our Prodects', style: TextStyle(fontSize: 30, color: Colors.white)
-                //     )
-                //   ]),
-                // ),
                 SizedBox(height: 15),
                 ViewPagerButton()
               ],
             ))
           : Column(
               children: [
-                Text(
-                  'Introducing our products.',
-                  textAlign: TextAlign.center,
-                  maxLines: 10,
-                  style: TextStyle(fontSize: 30, color: Colors.white),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Text(
+                    "Here are a few design projects I've worked on recently.\nWant to see more?",
+                    textAlign: TextAlign.center,
+                    maxLines: 10,
+                    style: TextStyle(fontSize: 20, color: Colors.white, height: 1.5),
+                  ),
                 ),
                 SizedBox(height: 15),
                 ViewPagerButton()

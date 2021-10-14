@@ -16,28 +16,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    // return Scaffold(
-    //   endDrawerEnableOpenDragGesture: false,
-    //   endDrawer: ConstrainedBox(
-    //     constraints: BoxConstraints(minWidth: 150, maxWidth: 160),
-    //     child: NavItem(),
-    //   ),
-    //   drawerEnableOpenDragGesture: false,
-    //   body: Container(
-    //     child: SingleChildScrollView(
-    //       child: Column(
-    //         crossAxisAlignment: CrossAxisAlignment.start,
-    //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    //         children: [
-    //           MyAppBar(),
-    //           HomeScreen(),
-    //           ViewPager(),
-    //           BottomBar(),
-    //         ],
-    //       ),
-    //     ),
-    //   ),
-    // );
     return Scaffold(
       endDrawerEnableOpenDragGesture: false,
       endDrawer: ConstrainedBox(
@@ -173,29 +151,17 @@ class MainTextDesktop extends StatelessWidget {
         SizedBox(
           height: 30.0,
         ),
-        RichText(
-          text: TextSpan(children: [
-            TextSpan(
-                text: 'Advertising and business ',
-                style: TextStyle(
-                    fontSize: isDesktop(context)
-                        ? 32
-                        : isTab(context)
-                            ? 20
-                            : 20,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black)),
-            TextSpan(
-                text: 'inquiries are always welcome.',
-                style: TextStyle(
-                    fontSize: isDesktop(context)
-                        ? 32
-                        : isTab(context)
-                            ? 20
-                            : 20,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black))
-          ]),
+        Text(
+          "I’m always open to discussing product work or partnership opportunities.",
+          style: TextStyle(
+              fontSize: isDesktop(context)
+                  ? 32
+                  : isTab(context)
+                      ? 25
+                      : 20,
+              fontWeight: FontWeight.w500,
+              color: Colors.black),
+          textAlign: TextAlign.start,
         )
       ],
     );
@@ -227,7 +193,7 @@ class MainTextMobile extends StatelessWidget {
             textAlign: TextAlign.center),
         SizedBox(height: 30.0),
         Text(
-          'Advertising and business inquiries are always welcome.',
+          "I’m always open to discussing product work or partnership opportunities.",
           style: TextStyle(
               fontSize: 20, fontWeight: FontWeight.w500, color: Colors.black),
           textAlign: TextAlign.center,
