@@ -57,7 +57,7 @@ class NavItems extends StatelessWidget {
     return InkWell(
       onTap: tapEvent,
       hoverColor: Colors.blueGrey, //transparent
-      child: Text(
+      child: SelectableText(
         title,
         style: TextStyle(fontWeight: FontWeight.w300),
       ),

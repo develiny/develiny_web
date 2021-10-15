@@ -66,7 +66,7 @@ class ContactUsScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
+                SelectableText(
                   'Contact',
                   style: TextStyle(
                       color: Color.fromRGBO(5, 5, 100, 1.0),
@@ -76,7 +76,7 @@ class ContactUsScreen extends StatelessWidget {
                   padding: !isMobile(context)
                       ? EdgeInsets.symmetric(vertical: 20.0, horizontal: 40.0)
                       : EdgeInsets.symmetric(vertical: 15.0, horizontal: 15.0),
-                  child: Text(
+                  child: SelectableText(
                       "we're happy to answer any questions you have or provide you with an estimate. just send us a message in the from below with any questions you may have.",
                   style: TextStyle(height: 1.5),),
                 ),
@@ -187,7 +187,7 @@ class ContactUsScreen extends StatelessWidget {
 
   void openSnackBar(BuildContext context, String msg) {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-      content: Text(msg, textAlign: !isMobile(context) ? TextAlign.center : TextAlign.start),
+      content: SelectableText(msg, textAlign: !isMobile(context) ? TextAlign.center : TextAlign.start),
       duration: Duration(seconds: 2),
       backgroundColor: Colors.indigo,
       action: SnackBarAction(

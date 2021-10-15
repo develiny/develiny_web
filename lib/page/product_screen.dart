@@ -332,7 +332,7 @@ class DesktopProductItem extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(10.0),
-                          child: Text(
+                          child: SelectableText(
                             text,
                             style: TextStyle(fontSize: textSize),
                           ),
@@ -427,7 +427,7 @@ class TabProductItem extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(10.0),
-                          child: Text(
+                          child: SelectableText(
                             text,
                             style: TextStyle(fontSize: textSize),
                           ),
@@ -510,7 +510,7 @@ class MobileProductItem extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           SizedBox(height: 20.0),
-          Text(
+          SelectableText(
             text,
             style: TextStyle(),
             textAlign: TextAlign.center,

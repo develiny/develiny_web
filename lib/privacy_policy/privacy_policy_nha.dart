@@ -57,7 +57,7 @@ class PrivacyPolicyNhaDesktop extends StatelessWidget {
                   icon: Icon(Icons.arrow_back_ios),
                   iconSize: 20.0,
                 ),
-                Text('나훈아 노래모음'),
+                SelectableText('나훈아 노래모음'),
                 Opacity(
                   opacity: 0.0,
                   child: IconButton(

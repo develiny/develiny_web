@@ -71,7 +71,7 @@ class DesktopAbountUsScreen extends StatelessWidget {
                     SizedBox(
                       height: 20.0,
                     ),
-                    Text('Develiny',
+                    SelectableText('Develiny',
                         style: GoogleFonts.pacifico(
                             fontSize: 25.0,
                             color: Color.fromRGBO(5, 5, 100, 1.0))),
@@ -118,21 +118,21 @@ class DesktopAbountUsScreen extends StatelessWidget {
                     // mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      SelectableText(
                         "Develiny is a freelancer who lives in South Korea.",
                         textAlign: TextAlign.start,
                         style: TextStyle(
                             fontSize: 18.0, fontWeight: FontWeight.w600),
                       ),
                       SizedBox(height: 10),
-                      Text(
+                      SelectableText(
                         "I'm developing a one-man developer app or web service. My area of expertise is developing hybrid web apps and Android native apps.",
                         textAlign: TextAlign.start,
                         style: TextStyle(
                             fontSize: 18.0, fontWeight: FontWeight.w600),
                       ),
                       SizedBox(height: 10),
-                      Text(
+                      SelectableText(
                         "Let's make something special.",
                         textAlign: TextAlign.start,
                         style: TextStyle(
@@ -185,23 +185,23 @@ class MobileAboutUsScreen extends StatelessWidget {
               SizedBox(
                 height: 20.0,
               ),
-              Text('Develiny',
+              SelectableText('Develiny',
                   style: GoogleFonts.pacifico(
                       fontSize: 25.0, color: Color.fromRGBO(5, 5, 100, 1.0))),
               SizedBox(height: 20),
-              Text(
+              SelectableText(
                 "Develiny is a freelancer who lives in Korea.",
                 style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w400),
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: 10),
-              Text(
+              SelectableText(
                 "I'm developing a one-man developer app or web service. My area of expertise is developing hybrid web apps and Android native apps.",
                 style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w400),
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: 10),
-              Text(
+              SelectableText(
                 "Let's make something special.",
                 style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w400),
                 textAlign: TextAlign.center,

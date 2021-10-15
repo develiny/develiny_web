@@ -151,7 +151,7 @@ class MainTextDesktop extends StatelessWidget {
         SizedBox(
           height: 30.0,
         ),
-        Text(
+        SelectableText(
           "I’m always open to discussing product work or partnership opportunities.",
           style: TextStyle(
               fontSize: isDesktop(context)
@@ -177,22 +177,22 @@ class MainTextMobile extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text('Welcom to',
+        SelectableText('Welcom to',
             style: TextStyle(
                 fontSize: 32, fontWeight: FontWeight.w800, color: Colors.black),
             textAlign: TextAlign.center),
-        Text('Develiny',
+        SelectableText('Develiny',
             style: TextStyle(
                 fontSize: 32,
                 fontWeight: FontWeight.w800,
                 color: Colors.indigo),
             textAlign: TextAlign.center),
-        Text('Take a look at our product',
+        SelectableText('Take a look at our product',
             style: TextStyle(
                 fontSize: 32, fontWeight: FontWeight.w800, color: Colors.black),
             textAlign: TextAlign.center),
         SizedBox(height: 30.0),
-        Text(
+        SelectableText(
           "I’m always open to discussing product work or partnership opportunities.",
           style: TextStyle(
               fontSize: 20, fontWeight: FontWeight.w500, color: Colors.black),

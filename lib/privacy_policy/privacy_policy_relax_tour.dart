@@ -57,7 +57,7 @@ class PrivacyPolicyRelaxTourDesktop extends StatelessWidget {
                   icon: Icon(Icons.arrow_back_ios),
                   iconSize: 20.0,
                 ),
-                Text('Relax Tour'),
+                SelectableText('Relax Tour'),
                 Opacity(
                   opacity: 0.0,
                   child: IconButton(
