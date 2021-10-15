@@ -78,7 +78,7 @@ class PrivacyPolicyRelaxTourDesktop extends StatelessWidget {
               padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 40.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [Text(RelaxTourText.text, style: TextStyle(height: 1.5),)],
+                children: [SelectableText(RelaxTourText.text, style: TextStyle(height: 1.5),)],
               ),
             ),
           ],
